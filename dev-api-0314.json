@@ -1,0 +1,1502 @@
+{
+	"info": {
+		"_postman_id": "a161195f-7e7d-4872-8134-feaf3f30e971",
+		"name": "dev-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user-api",
+			"item": [
+				{
+					"name": "ott 요청",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test0314@test.com\",\n    \"template\":\"password_update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/ott/",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"ott",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ott 확인",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/ott?email=test0314@test.com&ott=573992",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"ott"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "test0314@test.com"
+								},
+								{
+									"key": "ott",
+									"value": "573992"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "firebase 이메일 존재여부 체크",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/users/email?email=test0314@test.com",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"users",
+								"email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "test0314@test.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(app) 회원가입",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjQ5NDQwLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNDk0NDAsImV4cCI6MTY0NzI1MzA0MCwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.T4Uz7S7_SITNGwATXlB8108IVPZ2yblzqMC75Iye9USR10fFU7MorZkPc8jyuBCqG7jsLq550C9uWgHF7JqMptQP6sob5syBoEQbMiNfpKVnzq5IuskD627nonwAqi2e2yfpfALKC-WELzyaOxTEQdl8_Va1ZK7olsNO2LFY-acZBl27cksWdod5MltuctvZjNu1GVVSWXBLaqRRyH6lszE56VUPA162_e0ZWQu3r6MU1IIcb7Igqu6Eq7A1gkc75VjLNyOBlqzVbc0X9DqMiM-0kQ2fu3xddqsNB5aI6OnXXYFK-SCmCs4aDdZgAglw7HrnIhAc6JMe21-MHMF-0A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test0314@test.com\",\n    \"phone\":\"01022223333\",\n    \"ci\":\"1234567890abcdefg\",\n    \"name\":\"HHH\",\n    \"is_marketing\":false,\n    \"fcm_token\":\"abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/users/me",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "본인 정보 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjQ5NjQ2LCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNDk2NDYsImV4cCI6MTY0NzI1MzI0NiwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.IxUVZLvYNUVP_UKIBL09M3baBky0eTrqoc6fTIcXIdh6Mr9L3o-6eGFTMpyb_T_p-kZWycOp_iJ0tDXcmT91feWPpRjMk3dBQe92SfAxgDpe885a2T3CsbNJ4bPcD7D5D6Iv2XWYe-bqwBwGKnc0VJj4el_oI772Li5TnjrJ0CJOfrS6zuAk8lWG7IMWfcHQsKvOLcUsiu2jgj1b4cFrIORWkfyzBvSsdRstzz0g6qLMj84WIPJLAB75n8O8o2yB9q7XdSJpKJ_M1e9vRAjDfE0RT9iad2oWDGO2z2mXodUebyRmD71P3drZJsEg5VXp_-AO1Ll1g4b64I6Op7zPxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/users/me",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "본인 정보 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjQ5NjQ2LCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNDk2NDYsImV4cCI6MTY0NzI1MzI0NiwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.IxUVZLvYNUVP_UKIBL09M3baBky0eTrqoc6fTIcXIdh6Mr9L3o-6eGFTMpyb_T_p-kZWycOp_iJ0tDXcmT91feWPpRjMk3dBQe92SfAxgDpe885a2T3CsbNJ4bPcD7D5D6Iv2XWYe-bqwBwGKnc0VJj4el_oI772Li5TnjrJ0CJOfrS6zuAk8lWG7IMWfcHQsKvOLcUsiu2jgj1b4cFrIORWkfyzBvSsdRstzz0g6qLMj84WIPJLAB75n8O8o2yB9q7XdSJpKJ_M1e9vRAjDfE0RT9iad2oWDGO2z2mXodUebyRmD71P3drZJsEg5VXp_-AO1Ll1g4b64I6Op7zPxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fcm_token\": \"abc\",\n    \"is_marketing\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/users/me",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "비밀번호 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjQ5NjQ2LCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNDk2NDYsImV4cCI6MTY0NzI1MzI0NiwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.IxUVZLvYNUVP_UKIBL09M3baBky0eTrqoc6fTIcXIdh6Mr9L3o-6eGFTMpyb_T_p-kZWycOp_iJ0tDXcmT91feWPpRjMk3dBQe92SfAxgDpe885a2T3CsbNJ4bPcD7D5D6Iv2XWYe-bqwBwGKnc0VJj4el_oI772Li5TnjrJ0CJOfrS6zuAk8lWG7IMWfcHQsKvOLcUsiu2jgj1b4cFrIORWkfyzBvSsdRstzz0g6qLMj84WIPJLAB75n8O8o2yB9q7XdSJpKJ_M1e9vRAjDfE0RT9iad2oWDGO2z2mXodUebyRmD71P3drZJsEg5VXp_-AO1Ll1g4b64I6Op7zPxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ott\":\"14c375\",\n    \"email\":\"test0314@test.com\",\n    \"pincode\":\"222222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/users/password",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"users",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원탈퇴",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjQ5NjQ2LCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNDk2NDYsImV4cCI6MTY0NzI1MzI0NiwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.IxUVZLvYNUVP_UKIBL09M3baBky0eTrqoc6fTIcXIdh6Mr9L3o-6eGFTMpyb_T_p-kZWycOp_iJ0tDXcmT91feWPpRjMk3dBQe92SfAxgDpe885a2T3CsbNJ4bPcD7D5D6Iv2XWYe-bqwBwGKnc0VJj4el_oI772Li5TnjrJ0CJOfrS6zuAk8lWG7IMWfcHQsKvOLcUsiu2jgj1b4cFrIORWkfyzBvSsdRstzz0g6qLMj84WIPJLAB75n8O8o2yB9q7XdSJpKJ_M1e9vRAjDfE0RT9iad2oWDGO2z2mXodUebyRmD71P3drZJsEg5VXp_-AO1Ll1g4b64I6Op7zPxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reason\": \"사유\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/users/me",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(app) push",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjQ5NDQwLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNDk0NDAsImV4cCI6MTY0NzI1MzA0MCwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.T4Uz7S7_SITNGwATXlB8108IVPZ2yblzqMC75Iye9USR10fFU7MorZkPc8jyuBCqG7jsLq550C9uWgHF7JqMptQP6sob5syBoEQbMiNfpKVnzq5IuskD627nonwAqi2e2yfpfALKC-WELzyaOxTEQdl8_Va1ZK7olsNO2LFY-acZBl27cksWdod5MltuctvZjNu1GVVSWXBLaqRRyH6lszE56VUPA162_e0ZWQu3r6MU1IIcb7Igqu6Eq7A1gkc75VjLNyOBlqzVbc0X9DqMiM-0kQ2fu3xddqsNB5aI6OnXXYFK-SCmCs4aDdZgAglw7HrnIhAc6JMe21-MHMF-0A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"제목\",\n    \"body\":\"내용\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/push",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"push"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(admin) 회원 정보 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYxOTg5NDgsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjE5ODk0OCwiZXhwIjoxNjQ2MjAyNTQ4LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.eIRD9pat0ff3o50LCjvRVm-56P2cUUbCA-nFz9UuovwZdwq4ahF08ICvQyNiX1zCo4U58QdkI7tTUmb0vWaiSfTNyO3PznvkyGYmOpjL2eP5GF5ntE7qI6qH9Abd3eMxvLcH3EMAV1RwgFUFyPfsOOgFA1RLkrK6GOFmsm-gAxDtnElw4uPWp4NVnC5m_Yjl3nCj9t_E3w5XerG7pQa2Hl8HwfdXcnpxuWSTuwk6mkhuGNqWCdKS1wN6g_F9Nxw9IVmrXBfP-u0tRQ2wPDZmOgp5JJvvD4_oU0hVq8ZOKN8TlkfS0QCVo9R6vLdmZ9gk6xjNvP-96v5Qg7PtU3Pe0A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/users",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "partner-api",
+			"item": [
+				{
+					"name": "파트너 연동",
+					"item": [
+						{
+							"name": "linkage ott 획득",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/linkage/ott?ci=1234567890abcdefg",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"linkage",
+										"ott"
+									],
+									"query": [
+										{
+											"key": "ci",
+											"value": "1234567890abcdefg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "linkage user 등록",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_code\":\"ci와 같은 값을 입력하세요.\",\n    \"ott\":\"158231\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/linkage/",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"linkage",
+										""
+									]
+								},
+								"description": "*   user_code는 ci와 동일하게 설정해서 사용해주세요!"
+							},
+							"response": []
+						},
+						{
+							"name": "linkage user 확인",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/linkage/check?user_code=1234567890abcdefg",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"linkage",
+										"check"
+									],
+									"query": [
+										{
+											"key": "user_code",
+											"value": "1234567890abcdefg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "linkage user 삭제",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_code\":\"zczc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/linkage/",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"linkage",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "파트너 코인 조회/적립/차감",
+					"item": [
+						{
+							"name": "파트너 코인 수량 확인",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/coin/user/amount?user_code=1234567890abcdefg",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"coin",
+										"user",
+										"amount"
+									],
+									"query": [
+										{
+											"key": "user_code",
+											"value": "1234567890abcdefg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 코인 내역 확인",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/coin/user/history?user_code=1234567890abcdefg",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"coin",
+										"user",
+										"history"
+									],
+									"query": [
+										{
+											"key": "user_code",
+											"value": "1234567890abcdefg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 코인 적립",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_code\":\"1234567890abcdefg\",\n    \"amount\":10.0,\n    \"coin_type\":\"A01\",\n    \"valid_start_dt\" : \"2022-01-01 10:11:10.111\",\n    \"valid_end_dt\" : \"2022-10-01 10:11:10.111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/coin/add",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"coin",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 코인 차감",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_code\":\"1234567890abcdefg\",\n    \"amount\":\"3.0\",\n    \"coin_type\":\"A01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/coin/use",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"coin",
+										"use"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(app) 본인 파트너 코인 수량 확인",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/coin/me?user_code=1234567890abcdefg",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"coin",
+										"me"
+									],
+									"query": [
+										{
+											"key": "user_code",
+											"value": "1234567890abcdefg"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "파트너 관리",
+					"item": [
+						{
+							"name": "파트너 목록 조회",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYyMTMwNjQsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjIxMzA2NCwiZXhwIjoxNjQ2MjE2NjY0LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hezFvyfGEY2xrPGYqnj93kQ-3ePyO-_pvqU0cWqHUda3Iq1MZbvsZ-nsN372hJmxOBGZL__p3CGeyUezVkHqXciDDzkm-xV-HYyHvVU5DP-9e3yU5Esh8pIMNeUFfbT-4EFQZWoKS1Adi1bu7q6ksI3H17hym2tBrltBMcue3SE-D-gA_c83DwHqULKcIG7ttvJk8T7R7eiTc8AYgUmEKHLimRs_790j6mhrZgH_UAP4mVgThGFiS3tO_tcPaNwShBLEKRof5Q1gFt-zQOjhJ_4YPRFZrETs5evAXj4RAKJUXyTagkp7mmG9b39CF4YHK3BKQroeVDhRGougKY2V5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "신규 파트너 등록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYyMTMwNjQsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjIxMzA2NCwiZXhwIjoxNjQ2MjE2NjY0LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hezFvyfGEY2xrPGYqnj93kQ-3ePyO-_pvqU0cWqHUda3Iq1MZbvsZ-nsN372hJmxOBGZL__p3CGeyUezVkHqXciDDzkm-xV-HYyHvVU5DP-9e3yU5Esh8pIMNeUFfbT-4EFQZWoKS1Adi1bu7q6ksI3H17hym2tBrltBMcue3SE-D-gA_c83DwHqULKcIG7ttvJk8T7R7eiTc8AYgUmEKHLimRs_790j6mhrZgH_UAP4mVgThGFiS3tO_tcPaNwShBLEKRof5Q1gFt-zQOjhJ_4YPRFZrETs5evAXj4RAKJUXyTagkp7mmG9b39CF4YHK3BKQroeVDhRGougKY2V5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"partnerCode\": \"DABANG\",\n    \"partnerNo\": \"011-122-1251234\",\n    \"partnerName\": \"다방\",\n    \"partnerFee\": 0.01,\n    \"validEndDate\": \"1y\",\n    \"pointToCoin\": false,\n    \"coinToPoint\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 상세조회",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYyMTMwNjQsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjIxMzA2NCwiZXhwIjoxNjQ2MjE2NjY0LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hezFvyfGEY2xrPGYqnj93kQ-3ePyO-_pvqU0cWqHUda3Iq1MZbvsZ-nsN372hJmxOBGZL__p3CGeyUezVkHqXciDDzkm-xV-HYyHvVU5DP-9e3yU5Esh8pIMNeUFfbT-4EFQZWoKS1Adi1bu7q6ksI3H17hym2tBrltBMcue3SE-D-gA_c83DwHqULKcIG7ttvJk8T7R7eiTc8AYgUmEKHLimRs_790j6mhrZgH_UAP4mVgThGFiS3tO_tcPaNwShBLEKRof5Q1gFt-zQOjhJ_4YPRFZrETs5evAXj4RAKJUXyTagkp7mmG9b39CF4YHK3BKQroeVDhRGougKY2V5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "73bEPhin0v8NfyWvLdRMs6KJhKVEzoZe9C2pgxzw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 정보 수정",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYyMTMwNjQsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjIxMzA2NCwiZXhwIjoxNjQ2MjE2NjY0LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hezFvyfGEY2xrPGYqnj93kQ-3ePyO-_pvqU0cWqHUda3Iq1MZbvsZ-nsN372hJmxOBGZL__p3CGeyUezVkHqXciDDzkm-xV-HYyHvVU5DP-9e3yU5Esh8pIMNeUFfbT-4EFQZWoKS1Adi1bu7q6ksI3H17hym2tBrltBMcue3SE-D-gA_c83DwHqULKcIG7ttvJk8T7R7eiTc8AYgUmEKHLimRs_790j6mhrZgH_UAP4mVgThGFiS3tO_tcPaNwShBLEKRof5Q1gFt-zQOjhJ_4YPRFZrETs5evAXj4RAKJUXyTagkp7mmG9b39CF4YHK3BKQroeVDhRGougKY2V5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "73bEPhin0v8NfyWvLdRMs6KJhKVEzoZe9C2pgxzw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"partnerFee\": 0.01,\n    \"validEndDate\": \"1y\",\n    \"pointToCoin\": false,\n    \"coinToPoint\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 삭제",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYyMTMwNjQsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjIxMzA2NCwiZXhwIjoxNjQ2MjE2NjY0LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hezFvyfGEY2xrPGYqnj93kQ-3ePyO-_pvqU0cWqHUda3Iq1MZbvsZ-nsN372hJmxOBGZL__p3CGeyUezVkHqXciDDzkm-xV-HYyHvVU5DP-9e3yU5Esh8pIMNeUFfbT-4EFQZWoKS1Adi1bu7q6ksI3H17hym2tBrltBMcue3SE-D-gA_c83DwHqULKcIG7ttvJk8T7R7eiTc8AYgUmEKHLimRs_790j6mhrZgH_UAP4mVgThGFiS3tO_tcPaNwShBLEKRof5Q1gFt-zQOjhJ_4YPRFZrETs5evAXj4RAKJUXyTagkp7mmG9b39CF4YHK3BKQroeVDhRGougKY2V5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "73bEPhin0v8NfyWvLdRMs6KJhKVEzoZe9C2pgxzw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 코인 발행 수량 조회",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYyMTMwNjQsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjIxMzA2NCwiZXhwIjoxNjQ2MjE2NjY0LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hezFvyfGEY2xrPGYqnj93kQ-3ePyO-_pvqU0cWqHUda3Iq1MZbvsZ-nsN372hJmxOBGZL__p3CGeyUezVkHqXciDDzkm-xV-HYyHvVU5DP-9e3yU5Esh8pIMNeUFfbT-4EFQZWoKS1Adi1bu7q6ksI3H17hym2tBrltBMcue3SE-D-gA_c83DwHqULKcIG7ttvJk8T7R7eiTc8AYgUmEKHLimRs_790j6mhrZgH_UAP4mVgThGFiS3tO_tcPaNwShBLEKRof5Q1gFt-zQOjhJ_4YPRFZrETs5evAXj4RAKJUXyTagkp7mmG9b39CF4YHK3BKQroeVDhRGougKY2V5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "73bEPhin0v8NfyWvLdRMs6KJhKVEzoZe9C2pgxzw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/publication",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"publication"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 코인 발행 요청",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDYyMTMwNjQsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0NjIxMzA2NCwiZXhwIjoxNjQ2MjE2NjY0LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hezFvyfGEY2xrPGYqnj93kQ-3ePyO-_pvqU0cWqHUda3Iq1MZbvsZ-nsN372hJmxOBGZL__p3CGeyUezVkHqXciDDzkm-xV-HYyHvVU5DP-9e3yU5Esh8pIMNeUFfbT-4EFQZWoKS1Adi1bu7q6ksI3H17hym2tBrltBMcue3SE-D-gA_c83DwHqULKcIG7ttvJk8T7R7eiTc8AYgUmEKHLimRs_790j6mhrZgH_UAP4mVgThGFiS3tO_tcPaNwShBLEKRof5Q1gFt-zQOjhJ_4YPRFZrETs5evAXj4RAKJUXyTagkp7mmG9b39CF4YHK3BKQroeVDhRGougKY2V5w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "73bEPhin0v8NfyWvLdRMs6KJhKVEzoZe9C2pgxzw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\":10.0,\n    \"publisher\":\"HHH\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-api.azit.app/v1/partners/DABANG/publication",
+									"protocol": "https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"publication"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "파트너 코인 발행 내역 조회",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkYzBlNmRmOTgyN2EwMjA2MWU4MmY0NWI0ODQwMGQwZDViMjgyYzAiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6ImFkbWluIiwicGFydG5lcl9jb2RlIjoiYXppdCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heml0LXdhbGxldC1kZXYiLCJhdWQiOiJheml0LXdhbGxldC1kZXYiLCJhdXRoX3RpbWUiOjE2NDUwMTg2NDEsInVzZXJfaWQiOiJZM2Rqa0V5OFJFZ1piWlF4c082TTh4TDl6VTgyIiwic3ViIjoiWTNkamtFeThSRWdaYlpReHNPNk04eEw5elU4MiIsImlhdCI6MTY0Njk2NDQ3NywiZXhwIjoxNjQ2OTY4MDc3LCJlbWFpbCI6InN1cGVyYWRtaW5Ac3VwZXJhZG1pbi5zdXBlciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzdXBlcmFkbWluQHN1cGVyYWRtaW4uc3VwZXIiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.gnlAmKkPb9dGX3ArMoW2GcJMGPk8marWDULPdHtVHZZFKdH60nUmuTyUqnFBARUA9yXjpHpYBDZmSDiS0vrbFtEFURmpPpFOSZrwHvZXoZwiHA2HpJNvXhd0OCiJfNWhr2XE23Fe0wIYahWt-tw-rjP-3qYIgm3bj1u8OAadoo6Y-dIyhJ3GZ-PD-6fhbE-KqMtXnot9tpnJ6ZW2XTBzbJhjfl8dmAS706p4pJ874H1VRMYJwhRgw_V8Ckr0E7P9sJiOeMR2L1FgBVrnZ5KiDDaLb5qp0XtojtfiZr1grfA6CfTJ1dv-EJ3p81OzA1-Xo9u8XUMWuX93hNOxj5Ttuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "73bEPhin0v8NfyWvLdRMs6KJhKVEzoZe9C2pgxzw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "`https://dev-api.azit.app/v1/partners/DABANG/publication/history?page_no=1&page_size=10&sort=`",
+									"protocol": "`https",
+									"host": [
+										"dev-api",
+										"azit",
+										"app"
+									],
+									"path": [
+										"v1",
+										"partners",
+										"DABANG",
+										"publication",
+										"history"
+									],
+									"query": [
+										{
+											"key": "page_no",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "10"
+										},
+										{
+											"key": "sort",
+											"value": "`"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "chain-api",
+			"item": [
+				{
+					"name": "(확인필요) 지갑 생성",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjUwMzIxLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNTAzMjEsImV4cCI6MTY0NzI1MzkyMSwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.RXGkGl0FjuotzmcCuXsdSQfsyy7jSuDfJSMIS9K3oAtkU-HhpN2q15jiFASQU2BKhq06cFPcKJqAh4TASNGkD0SgJllziDmzGrpu5a6XaR-bzuAGdtiEg2BTfFTte20bme2DxpF4rPny58o0XYIW68pGZWPiVAs8fFdIx2691iMDb6pvSelnTJMVULSMoOaQzJ-8X0T_B-LJT8NWI73te0VGjVacEjVvxZHx6ZxZXEWJI_PHoDtqoUCKAhgcXNdwp_5SqfDlLBFxJ24PTTcLCw31wci98gzXaxIghiIAirb_NtKXVn771eoz-U6BMEB0iGD31sjK-GPbgKNYVS636g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/wallets/",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"wallets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "지갑 주소 조회",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjUwMzIxLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNTAzMjEsImV4cCI6MTY0NzI1MzkyMSwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.RXGkGl0FjuotzmcCuXsdSQfsyy7jSuDfJSMIS9K3oAtkU-HhpN2q15jiFASQU2BKhq06cFPcKJqAh4TASNGkD0SgJllziDmzGrpu5a6XaR-bzuAGdtiEg2BTfFTte20bme2DxpF4rPny58o0XYIW68pGZWPiVAs8fFdIx2691iMDb6pvSelnTJMVULSMoOaQzJ-8X0T_B-LJT8NWI73te0VGjVacEjVvxZHx6ZxZXEWJI_PHoDtqoUCKAhgcXNdwp_5SqfDlLBFxJ24PTTcLCw31wci98gzXaxIghiIAirb_NtKXVn771eoz-U6BMEB0iGD31sjK-GPbgKNYVS636g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ2MTk5NTQ2LCJ1c2VyX2lkIjoiUjVYOWJNdVpzWVpyQ1lQVHRUbGREeHNDakZKMiIsInN1YiI6IlI1WDliTXVac1lackNZUFR0VGxkRHhzQ2pGSjIiLCJpYXQiOjE2NDYxOTk1NDYsImV4cCI6MTY0NjIwMzE0NiwiZW1haWwiOiJhYmNAYWJjLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNAYWJjLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.qUYQm_jEUa4r7NwyDo6pgpUjwRN3rfhO80lmvQGGD2Nwvl_PKQR11LepbCs44h19VWHNRO_sGCAXpT2vXa5GAg1ZhRkDya5aAds2Cq_-x31p5mcDeJW-ZSIR1zaCIEpY72yLTF3EZSQSUNuY_bwFun8-KgBRjxlE12wYnzIJ7u-Zk3MofuiRkCUOEq52N8eHtoJWH_5uXfZU4Ug8WjemJelvDTtJyU80KH60dHt7ywqYiaZRoVOL76Ga60H0tRjjZs9yYAgaGsUX7badpkvbAZm6yVlOfXbIaFQS_ar_NtP2XxL9x6ijqq6myIUHz5ycnmILDyIbe-XG68KTzcShlA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/wallets?uid=XftRvcsVQhekghF0OkZ6gqJOJIA3",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"wallets"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "XftRvcsVQhekghF0OkZ6gqJOJIA3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(확인필요) 지갑 잔액 조회",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjUwMzIxLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNTAzMjEsImV4cCI6MTY0NzI1MzkyMSwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.RXGkGl0FjuotzmcCuXsdSQfsyy7jSuDfJSMIS9K3oAtkU-HhpN2q15jiFASQU2BKhq06cFPcKJqAh4TASNGkD0SgJllziDmzGrpu5a6XaR-bzuAGdtiEg2BTfFTte20bme2DxpF4rPny58o0XYIW68pGZWPiVAs8fFdIx2691iMDb6pvSelnTJMVULSMoOaQzJ-8X0T_B-LJT8NWI73te0VGjVacEjVvxZHx6ZxZXEWJI_PHoDtqoUCKAhgcXNdwp_5SqfDlLBFxJ24PTTcLCw31wci98gzXaxIghiIAirb_NtKXVn771eoz-U6BMEB0iGD31sjK-GPbgKNYVS636g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ2MTk5NTQ2LCJ1c2VyX2lkIjoiUjVYOWJNdVpzWVpyQ1lQVHRUbGREeHNDakZKMiIsInN1YiI6IlI1WDliTXVac1lackNZUFR0VGxkRHhzQ2pGSjIiLCJpYXQiOjE2NDYxOTk1NDYsImV4cCI6MTY0NjIwMzE0NiwiZW1haWwiOiJhYmNAYWJjLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhYmNAYWJjLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.qUYQm_jEUa4r7NwyDo6pgpUjwRN3rfhO80lmvQGGD2Nwvl_PKQR11LepbCs44h19VWHNRO_sGCAXpT2vXa5GAg1ZhRkDya5aAds2Cq_-x31p5mcDeJW-ZSIR1zaCIEpY72yLTF3EZSQSUNuY_bwFun8-KgBRjxlE12wYnzIJ7u-Zk3MofuiRkCUOEq52N8eHtoJWH_5uXfZU4Ug8WjemJelvDTtJyU80KH60dHt7ywqYiaZRoVOL76Ga60H0tRjjZs9yYAgaGsUX7badpkvbAZm6yVlOfXbIaFQS_ar_NtP2XxL9x6ijqq6myIUHz5ycnmILDyIbe-XG68KTzcShlA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/wallets/balance?uid=XftRvcsVQhekghF0OkZ6gqJOJIA3",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"wallets",
+								"balance"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "XftRvcsVQhekghF0OkZ6gqJOJIA3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(확인필요) tx 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjUwMzIxLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNTAzMjEsImV4cCI6MTY0NzI1MzkyMSwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.RXGkGl0FjuotzmcCuXsdSQfsyy7jSuDfJSMIS9K3oAtkU-HhpN2q15jiFASQU2BKhq06cFPcKJqAh4TASNGkD0SgJllziDmzGrpu5a6XaR-bzuAGdtiEg2BTfFTte20bme2DxpF4rPny58o0XYIW68pGZWPiVAs8fFdIx2691iMDb6pvSelnTJMVULSMoOaQzJ-8X0T_B-LJT8NWI73te0VGjVacEjVvxZHx6ZxZXEWJI_PHoDtqoUCKAhgcXNdwp_5SqfDlLBFxJ24PTTcLCw31wci98gzXaxIghiIAirb_NtKXVn771eoz-U6BMEB0iGD31sjK-GPbgKNYVS636g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/wallets/tx?count=100&cursor=1",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"wallets",
+								"tx"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "cursor",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(확인필요) azit 전송",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjUwMzIxLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNTAzMjEsImV4cCI6MTY0NzI1MzkyMSwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.RXGkGl0FjuotzmcCuXsdSQfsyy7jSuDfJSMIS9K3oAtkU-HhpN2q15jiFASQU2BKhq06cFPcKJqAh4TASNGkD0SgJllziDmzGrpu5a6XaR-bzuAGdtiEg2BTfFTte20bme2DxpF4rPny58o0XYIW68pGZWPiVAs8fFdIx2691iMDb6pvSelnTJMVULSMoOaQzJ-8X0T_B-LJT8NWI73te0VGjVacEjVvxZHx6ZxZXEWJI_PHoDtqoUCKAhgcXNdwp_5SqfDlLBFxJ24PTTcLCw31wci98gzXaxIghiIAirb_NtKXVn771eoz-U6BMEB0iGD31sjK-GPbgKNYVS636g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipient\":\"0x80CD6a53685441140219B335Ea47e5816405EEff\",\n    \"amount\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/wallets/tx",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"wallets",
+								"tx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(확인필요)azit 시세조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxZDU2YTI1MWU0ZGRhM2Y0NWM0MWZkNWQ0ZGEwMWQyYjlkNzJlMGQiLCJ0eXAiOiJKV1QifQ.eyJncm91cCI6InVzZXIiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXppdC13YWxsZXQtZGV2IiwiYXVkIjoiYXppdC13YWxsZXQtZGV2IiwiYXV0aF90aW1lIjoxNjQ3MjUwMzIxLCJ1c2VyX2lkIjoiWGZ0UnZjc1ZRaGVrZ2hGME9rWjZncUpPSklBMyIsInN1YiI6IlhmdFJ2Y3NWUWhla2doRjBPa1o2Z3FKT0pJQTMiLCJpYXQiOjE2NDcyNTAzMjEsImV4cCI6MTY0NzI1MzkyMSwiZW1haWwiOiJ0ZXN0MDMxNEB0ZXN0LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0MDMxNEB0ZXN0LmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.RXGkGl0FjuotzmcCuXsdSQfsyy7jSuDfJSMIS9K3oAtkU-HhpN2q15jiFASQU2BKhq06cFPcKJqAh4TASNGkD0SgJllziDmzGrpu5a6XaR-bzuAGdtiEg2BTfFTte20bme2DxpF4rPny58o0XYIW68pGZWPiVAs8fFdIx2691iMDb6pvSelnTJMVULSMoOaQzJ-8X0T_B-LJT8NWI73te0VGjVacEjVvxZHx6ZxZXEWJI_PHoDtqoUCKAhgcXNdwp_5SqfDlLBFxJ24PTTcLCw31wci98gzXaxIghiIAirb_NtKXVn771eoz-U6BMEB0iGD31sjK-GPbgKNYVS636g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.azit.app/v1/wallets/tx?count=100&cursor=1",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"azit",
+								"app"
+							],
+							"path": [
+								"v1",
+								"wallets",
+								"tx"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "cursor",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin-api",
+			"item": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "GJUGC6PAS04w1iShK8xwH5MS1upIXguQ41RciY4J",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
